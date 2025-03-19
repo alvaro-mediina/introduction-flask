@@ -21,8 +21,8 @@ def hello_world():
     return "Hola Mundo"
 ```
 
-> [!Danger] Algo que noté que no se puede hacer
-
+> [!TIP]
+> Algo que noté que no se puede hacer
 > es que si ponés un @app.route('/') y una función, luego si volvés a repetir la función la que se ejecutará será la primera que figura en el código estático.
 
 - El protocolo que utiliza `Flask` para la comunicación por internet es **HTTP**. Dado que `Flask` es un framework utilizado para el manejo de APIs web
