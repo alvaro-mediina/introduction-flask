@@ -1,6 +1,20 @@
 # 🔥 Introducción a Flask 🐍
 
-Este repositorio está 100% pensado para realizar el tutorial al Framework de Python, Flask y aprender a utilizar algunas de sus funcionalidades.
+Este repositorio está 100% pensado para realizar un tutorial al Framework de Python, Flask y aprender a utilizar algunas de sus funcionalidades.
+
+# Tabla de Contenidos
+
+- [📘 Básicos](#básicos)
+- [🔎 Utilización del método GET](#utilización-del-método-get)
+- [✉️ Utilización del método POST](#utilización-del-método-post)
+- [📖 Definiciones importantes](#definiciones-importantes)
+- [🚀 ¿Cuándo usar @app.route() y app.add_url_rule()?](#-cuándo-usar-approute-y-appadd_url_rule)
+- [🌐 4 Grandes métodos que utiliza una API web | Métodos HTTP](#4-grandes-métodos-que-utiliza-una-api-web--métodos-http)
+- [📦 Dependencias](#dependencias)
+- [▶️ Ejecución](#ejecución)
+
+<br/>
+<br/>
 
 # Básicos
 
@@ -27,6 +41,9 @@ def hello_world():
 
 - El protocolo que utiliza `Flask` para la comunicación por internet es **HTTP**. Dado que `Flask` es un framework utilizado para el manejo de APIs web
 
+<br/>
+<br/>
+
 ## Utilización del método GET
 
 ```python
@@ -52,6 +69,9 @@ def get_user(user_id):
     return jsonify(user), 200
 ```
 
+<br/>
+<br/>
+
 ## Utilización del método POST
 
 ```python
@@ -70,9 +90,58 @@ def create_user():
     return jsonify(data), 201
 ```
 
+<br/>
+<br/>
+
 # Definiciones importantes
 
 - **Endpoint**: es una URL (Uniform Resource Locator) o ruta dentro de una API que permite interactuar con un servidor para realizar una operación específica, como obtener datos, enviarlos o actualizarlos
+
+## Ejemplos
+
+- **GET** define un endpoint en la ruta `/usuarios` que permite realizar una operación de tipo GET.
+
+```python
+#Ejemplo de un endpoint
+app.add_url_rute('/usuarios', methods=['GET'])
+```
+
+- **POST:** define un endpoint en la ruta `/usuarios` que permite realizar una operación de tipo POST.
+
+```python
+app.add_url_rute('/usuarios', methods=['POST'])
+```
+
+- **PUT** define un endpoint en la ruta `/usuarios` que permite realizar una operación de tipo PUT.
+
+```python
+#Ejemplo de un endpoint
+app.add_url_rute('/usuarios', methods=['PUT'])
+```
+
+- **DELETE** define un endpoint en la ruta `/usuarios` que permite realizar una operación de tipo DELETE.
+
+```python
+#Ejemplo de un endpoint
+app.add_url_rute('/usuarios', methods=['DELETE'])
+```
+
+<br/>
+<br/>
+
+# A tener en cuenta
+
+## 🚀 ¿Cuándo usar `@app.route()` y `app.add_url_rule()`?
+
+| Caso de uso                                                           | `@app.route()` ✅ | `app.add_url_rule()` ✅ |
+| --------------------------------------------------------------------- | ----------------- | ----------------------- |
+| Definir rutas de forma sencilla y clara                               | ✅ Sí             | ❌ No                   |
+| Registrar rutas dinámicamente                                         | ❌ No             | ✅ Sí                   |
+| Definir rutas en un archivo separado (modularidad)                    | ❌ No             | ✅ Sí                   |
+| Código más corto y legible                                            | ✅ Sí             | ❌ No                   |
+| Ideal para pequeños y medianos proyectos                              | ✅ Sí             | ❌ No                   |
+| Necesitas registrar rutas a partir de datos externos (BD, JSON, etc.) | ❌ No             | ✅ Sí                   |
+| Compatible con múltiples métodos HTTP en una sola línea               | ✅ Sí             | ✅ Sí                   |
 
 # 4 Grandes métodos que utiliza una API web | Métodos HTTP
 
@@ -80,3 +149,29 @@ def create_user():
 - **POST**: enviar información.
 - **PUT**: actualizar información.
 - **DELETE**: eliminar información.
+
+# Dependencias
+
+1. **Crear entorno virtual**
+
+```bash
+python3 -m venv venv
+```
+
+2. **Activar entorno virtual**
+
+```bash
+source ven/bin/activate
+```
+
+3. **Instalar dependencias**
+
+```bash
+pip install -r requirements.txt
+```
+
+# Ejecución
+
+```bash
+python3 main.py
+```
