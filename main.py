@@ -4,6 +4,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
+    """
+    Escribe en HTML al root el string "Hola Mundo"
+    """
     return "Hola Mundo";
 
 
